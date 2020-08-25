@@ -5,9 +5,8 @@ import protection
 
 
 # Importing nessasary modules
-from subprocess import call
 from colorama import init, Fore, Back, Style
-#init
+init()
 
 
 # Some useless variables
@@ -25,16 +24,15 @@ print('(Choose from 1 to 2)')
 option = int(input())
 
 
-def startProtection():
-    print('Starting protection')
-    protection.protection()
+def initializeProtection():
+    protection.startProtection()
 
 
 def checkOption():
     if option == 1:
         config.chooseConfig()
-    if option == 3:
-        startProtection()
+    if option == 2:
+        initializeProtection()
 
 
 checkOption()

@@ -45,7 +45,7 @@ def on_release(key):
 
 
 # Starting protection
-def protection():
+def startProtection():
     #while True:
         # Moving cursor to the matched points (also in infinite loop)
         #pyautogui.move(600, 600)
