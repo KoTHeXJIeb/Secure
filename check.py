@@ -7,6 +7,9 @@ import protection
 from colorama import init, Fore, Back, Style
 init()
 
+def checkingPassword():
+    # Checking password (REALLY?)
+    config.password = input()
 
 def checkPassword():
     if config.password in config.password:

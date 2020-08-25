@@ -1,6 +1,7 @@
+# Importing some other files
 import config
 import check
-import protection
+import main
 
 
 # Importing some modules
@@ -11,37 +12,48 @@ init()
 
 
 # Some variables
-isSomeKeyPressed = False
+#SomeKeyPressed = False
+listener = Listener()
 
+
+#def loopChecking():
+    #global SomeKeyPressed
+    # Checking in infinite loop, if is some was key pressed
+    #while True:
+        #if SomeKeyPressed == True:
+            # Function from check.py, to check password
+            #check.checkingPassword()
+        #pass
+    #if SomeKeyPressed == True:
+        #check.checkingPassword()
+        #SomeKeyPressed = False
+    #return SomeKeyPressed
+
+#loopChecking()
 
 def on_press(key):
-    #print(Fore.GREEN + 'Wow, some key was pressed!')
-    if key == 'Space':
-        print('Magic?')
-    else:
-        isSomeKeyPressed == True
-        print('Some key was pressed!')
-
-
-def loopChecking():
-    while True:
-        if isSomeKeyPressed == True:
-            print('Is that working?')
-            isSomeKeyPressed = False
-
-
-loopChecking()
+    # On pressing some key, SomeKeyPressed becomes True
+    #SomeKeyPressed = True
+    listener.stop()
+    print('[LOG] Some key was pressed!')
+    check.checkingPassword()
 
 
 def on_release(key):
-    #print(Fore.GREEN + 'Wow, some key was released!')
+    # Just function for pynput
     pass
 
+
+# Starting protection
 def protection():
-    while True:
+    #while True:
+        # Moving cursor to the matched points (also in infinite loop)
         #pyautogui.move(600, 600)
         try:
+            # Listening to the keyboard input
            with Listener(on_press=on_press, on_release=on_release) as listener:
                listener.join()
         except:
+            # If some problem causes
             print(Fore.RED + 'Some error was occurupted while checking keyboard interrupt!')
+            print(Fore.GREEN + "")

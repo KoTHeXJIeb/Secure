@@ -12,15 +12,16 @@ from colorama import init, Fore, Back, Style
 
 # Some useless variables
 option = ''
+version = 'Beta 0.2'
 
 
 # Some useless functions
 print(Fore.GREEN + 'Welcome to SCP - secure, check, protect')
+print('Current version is ' + version)
 print('Select the option below: ')
 print('1) Configurate')
-print('2) Edit password and email')
-print('3) Start protection')
-print('(Choose from 1 to 3)')
+print('2) Start protection')
+print('(Choose from 1 to 2)')
 option = int(input())
 
 
@@ -31,10 +32,7 @@ def startProtection():
 
 def checkOption():
     if option == 1:
-        config.show()
-        print('[LOG] Opening configuration file')
-    if option == 2:
-        config.change()
+        config.chooseConfig()
     if option == 3:
         startProtection()
 
