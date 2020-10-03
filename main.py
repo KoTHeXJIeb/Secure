@@ -8,7 +8,7 @@ init()
 
 # Some useless variables
 option = ''
-version = 'Beta 0.2'
+version = 'Beta 0.2.0'
 option = ''
 password = 'defaultPass201'
 email = 'osabfisa@gmail.com'
